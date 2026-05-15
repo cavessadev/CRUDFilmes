@@ -12,6 +12,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == 'adicionar') {
         'titulo' => $_POST['titulo'],
         'genero' => $_POST['genero'],
         'ano' => $_POST['ano']
+        'diretor' => $_POST['diretor'],
     ];
 
     $_SESSION['filmes'][] = $filme;
@@ -40,6 +41,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == 'editar') {
         'titulo' => $_POST['titulo'],
         'genero' => $_POST['genero'],
         'ano' => $_POST -> ['ano']
+        'diretor' => $_POST['diretor'],
     ];
 
     header("Location: index.php");
@@ -80,6 +82,8 @@ if (isset($_GET['editar'])) {
 
             <input type="number" name="ano" placeholder="Ano" value="<?= $filmeEditar['ano'] ?>" required>
 
+            <input type="text" name="diretor" placeholder="Diretor" value="<?= $filmeEditar['diretor'] ?>" required>
+            
             <button type="submit" name="acao" value="editar">
                 Atualizar
             </button>
@@ -93,7 +97,9 @@ if (isset($_GET['editar'])) {
             <input type="text" name="genero" placeholder="Gênero" required>
 
             <input type="number" name="ano" placeholder="Ano" required>
-
+            
+            <input type="text" name="diretor" placeholder="Diretor" required>
+            
             <button type="submit" name="acao" value="adicionar">
                 Adicionar
             </button>
@@ -115,7 +121,7 @@ if (isset($_GET['editar'])) {
                 <td><?= $filme['titulo'] ?></td>
                 <td><?= $filme['genero'] ?></td>
                 <td><?= $filme['ano'] ?></td>
-
+                <td><?= $filme['diretor'] ?></td>
                 <td>
                     <a href="?editar=<?= $id ?>">Editar</a>
 
