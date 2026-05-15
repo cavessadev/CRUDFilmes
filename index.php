@@ -39,7 +39,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == 'editar') {
     $_SESSION['filmes'][$id] = [
         'titulo' => $_POST['titulo'],
         'genero' => $_POST['genero'],
-        'ano42' => $_POST['ano']
+        'perfil' => $_POST['identidade']
         
     ];
 
