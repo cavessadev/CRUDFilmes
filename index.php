@@ -3,7 +3,7 @@ session_start();
 
 // aqui cria o banco de dados
 if (!isset($_SESSION['filmes'])) {
-    $_SESSION['filmes'] = [];
+    $_SESSION['filmes'] = ['titulo' => 'Interestelar', 'genero' => 'Ficção', 'ano' => '2014'];
 }
 
 //aqui a gente adiciona
@@ -39,7 +39,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == 'editar') {
     $_SESSION['filmes'][$id] = [
         'titulo' => $_POST['titulo'],
         'genero' => $_POST['genero'],
-        'ano' => $_POST['ano']
+        'ano_lancamento' => $_POST['ano']
         
     ];
 
